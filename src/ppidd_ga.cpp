@@ -45,7 +45,7 @@ namespace ga {
     else if (fortint_size==sizeof(long long)) dtypes[PPIDD_FORTINT].id = MT_C_LONGLONG;
     else {
      std::string errmsg=" PPIDD_Initialize: unable to map PPIDD_FORTINT ";
-     GA_Error(errmsg.data(),fortint_size);
+     GA_Error(const_cast<char*>(errmsg.data()),fortint_size);
     }
     dtypes[PPIDD_DOUBLE].id = MT_C_DBL;
     dtypes[PPIDD_INT].id = MT_C_INT;
